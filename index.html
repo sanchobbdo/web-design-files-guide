@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Guías Sancho BBDO</title>
+<!-- Meta Tags -->
+<meta charset="utf-8">
+<meta name="author" content="Sancho BBDO">
+<meta name="description" content="{Escriba la descripción aquí}">
+<meta name="robots" content="all">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Open Graph - http://ogp.me/ -->
+<meta name="og:title" content="{Escriba el título aquí}" />
+<meta name="og:description" content="{Escriba la descripción aquí}" />
+<meta name="og:type" content="website" />
+<meta name="og:site_name" content="{Escriba el nombre del sitio aquí}"/>
+<meta name="og:url" content="{URL}" />
+<meta name="og:image" content="{URL}" />
+<!-- Favicon y Apple Touch Icon -->
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+<!-- Humanstxt.org -->
+<link rel="author" type="text/plain" href="humans.txt">
+<!-- Prefetch DNS assets externos -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<!-- Prefetch web fonts -->
+<link rel="prefetch" href="assets/fonts/sancho-bbdo-logo.eot">
+<link rel="prefetch" href="assets/fonts/sancho-bbdo-logo.svg">
+<link rel="prefetch" href="assets/fonts/sancho-bbdo-logo.ttf">
+<link rel="prefetch" href="assets/fonts/sancho-bbdo-logo.woff">
+<!-- CSS -->
+<link rel='stylesheet' href='assets/css/normalize.css'>
+<link rel='stylesheet' href='assets/css/h5bp.css'>
+<link rel='stylesheet' href='assets/css/ui.css'>
+<link rel='stylesheet' href='assets/css/style.css'>
+
+<!--[if lt IE 9]>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<script src="assets/js/vendor/lte-ie7.js"></script>
+<link media="screen" href="assets/css/ie.css" rel="stylesheet" />
+<![endif]-->
+
+
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link'); 
+                    for (var i = 0; i < links.length;i++) { 
+                    var link = links[i]; 
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+
+</head>
+<body>
+
+	<div class="l-app">
+		<header class="header" role="banner">
+				<nav id="nav" class="nav" role="navigation">
+		<h2>Tabla de contenido</h2>
+		<ol>
+			<li><a href="#inicio">Inicio</a></li>
+			<li><a href="#introduccion">Introducción</a></li>
+			<li><a href="#configuraciones-generales">Configuraciones generales</a></li>
+			<li><a href="#adobe-illustrator">Adobe Illustrator</a></li>
+			<li><a href="#adobe-photoshop">Adobe Photoshop</a></li>
+			<li><a href="#organizacion-de-los-archivos">Organización de los archivos</a></li>
+			<li><a href="#imagenes">Imágenes</a></li>
+			<li><a href="#tipografia">Tipografía</a></li>
+			<li><a href="#efectos">Efectos</a></li>
+			<li><a href="#buenas-practicas">Buenas prácticas</a></li>
+			<li><a href="#checklist">Checklist</a></li>
+			<li><a href="#recursos">Recursos</a></li>
+			<li><a href="#colaboradores">Colaboradores</a></li>
+			<li><a href="#licencia">Licencia</a></li>
+		</ol>
+		<p class="action-buttons"><a href="http://github.com" class="btn icon-github">Ir al código fuente</a></p>
+	</nav>
+		</header>
+<div id="tabla-de-contenidos" class="logo-container">
+	<a href="#nav" class="menu-btn icon-menu"></a>
+	<span class="sancho-logo">Sancho<abbr>BBDO</abbr></span>
+</div>
+<section role="main">
+	<div class="l-content">
+			<h1 class="sancho-logo">Sancho<abbr>BBDO</abbr></h1>
+
+	<h1 id="inicio">Guías para Diseño Web y Digital</h1>
+
+	<p><em>versión 1.0.0</em></p>
+
+	<h2 id="introduccion">Introducción</h2>
+
+	<p>Este documento define las expectativas esperadas en la entrega de archivos y assets gráficos destinados para la producción digital.</p>
+
+	<p>El equipo digital de <strong>Sancho BBDO</strong> recomienda el uso de <strong>Adobe Fireworks&trade;</strong> (<code>*.png</code>) para la realización de diseños destinados a la web y otros dispositivos digitales, utilizando Adobe Photoshop&trade; e Adobe Illustrator&trade; como complementos.</p>
+
+	<p>Se aceptaran también assets y archivos en en <code>*.psd</code> o <code>*.ai</code> siempre y cuando respete los lineamientos especificados en esta guía.</p>
+
+	<p><strong><a href="#tabla-de-contenidos">[⬆]</a></strong></p>
+
+	<h2 id="configuraciones-generales">Configuraciones generales</h2>
+
+	<p>A continuación algunas configuraciones y recomendaciones iniciales para iniciar un proyecto web/digital en Adobe Illustrator y Adobe Photoshop.</p>
+
+	<h2 id="adobe-illustrator">Adobe Illustrator</h2>
+
+	<h3>Configuración de color</h3>
+
+	<p>En el menú <em>(Edit > Color Settings)</em> modifique su configuración de color a <em>“North America Web/Internet”</em>.</p>
+
+	<p><img src="assets/i/illustrator-for-web-color-settings.png" alt="image" /></p>
+
+	<h3>Nuevo documento</h3>
+
+	<p>Cuando se inicia un nuevo documento, ajustar <em>"Document Profile"</em> en <em>“Web”</em>. Además de esto, todas las unidades deben estar en pixeles.
+	En el menú avanzado el modo de color debe estar en RGB, <em>"Raster Effects"</em> en 72 dpi, <em>"Preview Mode"</em> en “pixel,” y <em>“Align New Objects to Pixel Grid”</em> debe estar marcado. Las dimensiones del documento cambiarlas de acuerdo a las necesidades del proyecto.</p>
+
+	<p><img src="assets/i/illustrator-for-web-new-document.png" alt="image" /></p>
+
+	<h3>Preferencias</h3>
+
+	<p>En el menú <em>(Preferences > General)</em>, seleccione la opción <em>“Use Preview Bounds”</em>.</p>
+
+	<p><img src="assets/i/illustrator-for-web-general-preferences.png" alt="image" /></p>
+
+	<h3>Menú Vista</h3>
+
+	<p>En el menú <em>(View)</em>, active la opción <em>"Pixel Preview"</em>, <em>“Show Transparency Grid”</em>, y <em>“Snap to Pixel”</em>.</p>
+
+	<p><img src="assets/i/illustrator-for-web-view-menu.png" alt="image" /></p>
+
+	<h2 id="adobe-photoshop">Adobe Photoshop</h2>
+
+	<h3>Configuración de color</h3>
+
+	<p>En el menú <em>(Edit > Color Settings)</em> modifique su configuración de color a <em>“North America Web/Internet”</em>.</p>
+
+	<p><img src="assets/i/illustrator-for-web-color-settings.png" alt="image" /></p>
+
+	<h3>Nombre las capas correctamente</h3>
+
+	<p>Ser descriptivo como sea posible en cada capa. Nombrarlas inmediatamente reduce la confusión.</p>
+
+	<p><strong>Buena idea</strong></p>
+
+	<p><img src="assets/i/6_good.png" alt="image" /></p>
+
+	<p><strong>Mala idea</strong></p>
+
+	<p><img src="assets/i/6_bad.png" alt="image" /></p>
+
+	<h3>Utilice fólderes</h3>
+
+	<p>Agrupar capas permite mostrar y ocultar areas rápidamente, mejorando la navegación.</p>
+
+	<p><strong>Buena idea</strong></p>
+
+	<p><img src="assets/i/7_good.png" alt="image" /></p>
+
+	<p><strong>Mala idea</strong></p>
+
+	<p><img src="assets/i/7_bad.png" alt="image" /></p>
+
+	<h3>Elimine las capas innecesarias</h3>
+
+	<p>Eliminar las capas que no se usan, reducen el peso del archivo a la vez que evita confusiones.</p>
+
+	<p><strong>Buena idea</strong></p>
+
+	<p><img src="assets/i/8_good.png" alt="image" /></p>
+
+	<p><strong>Mala idea</strong></p>
+
+	<p><img src="assets/i/8_bad.png" alt="image" /></p>
+
+	<h3>Generalize elementos comúnes</h3>
+
+	<p>No hay una buena razón para tener 5 copias de una capa, Utilizela en una capa maestra.</p>
+
+	<p><strong>Buena idea</strong></p>
+
+	<p><img src="assets/i/9_good.png" alt="image" /></p>
+
+	<p><strong>Mala idea</strong></p>
+
+	<p><img src="assets/i/9_bad.png" alt="image" /></p>
+
+	<h3>Utilice Layer Comps/Smart Objects</h3>
+
+	<p>Layer Comps <em>(Window > Layer Comps)</em> son una increible forma de mostrar variaciones sin tener que mantener varios PSDs</p>
+
+	<p><strong>Buena idea</strong></p>
+
+	<p><img src="assets/i/10_good.png" alt="image" /></p>
+
+	<p><strong>Mala idea</strong></p>
+
+	<p><img src="assets/i/10_bad.png" alt="image" /></p>
+
+	<p><strong><a href="#tabla-de-contenidos">[⬆]</a></strong></p>
+
+	<h2 id="organizacion-de-los-archivos">Organización de los archivos</h2>
+
+	<h3>Consolide sus archivos</h3>
+
+	<p>Mantenga sus diseños en el minimo número de archivos</p>
+
+	<p><strong>Buena idea</strong></p>
+
+	<p><img src="assets/i/1_good.png" alt="image" /></p>
+
+	<p><strong>Mala idea</strong></p>
+
+	<p><img src="assets/i/1_bad.png" alt="image" /></p>
+
+	<h3>Nombre sus archivos apropiadamente</h3>
+
+	<p>Utilizar nombres como <em>"Nuevo"</em> o <em>"Último"</em> no es recomendado, es mejor utilizar nombres generales.</p>
+
+	<p><strong>Buena idea</strong></p>
+
+	<p><img src="assets/i/2_good.png" alt="image" /></p>
+
+	<p><strong>Mala idea</strong></p>
+
+	<p><img src="assets/i/2_bad.png" alt="image" /></p>
+
+	<h3>Mantenga los Assets relativos al archivo</h3>
+
+	<p>Tener un folder dedicado para los assets junto al archivo es recomendado.</p>
+
+	<p><strong>Buena idea</strong></p>
+
+	<p><img src="assets/i/3_good.png" alt="image" /></p>
+
+	<p><strong>Mala idea</strong></p>
+
+	<p><img src="assets/i/3_bad.png" alt="image" /></p>
+
+	<h3>Realice una plantilla para los elementos de interfaz</h3>
+
+	<p>Cree una página nueva o un archivo nuevo, donde se presente exclusivamente elementos de interfaz de usuario, como botones con sus estados, elementos de formularios, colores de estados de los links, etc…</p>
+
+	<p><strong>Buena idea</strong></p>
+
+	<p><img src="assets/i/4_good.png" alt="image" /></p>
+
+	<p><strong>Mala idea</strong></p>
+
+	<p><img src="assets/i/4_bad.png" alt="image" /></p>
+
+	<p><strong><a href="#tabla-de-contenidos">[⬆]</a></strong></p>
+
+	<h2 id="imagenes">Imágenes</h2>
+
+	<h3>Ajuste a…</h3>
+
+	<p>ajustar a la grilla, ajustar al pixel, ajustar en general permite que los elementos se mantengan alineados correctamente</p>
+
+	<p><strong>Buena idea</strong></p>
+
+	<p><img src="assets/i/13_good.png" alt="image" /></p>
+
+	<p><strong>Mala idea</strong></p>
+
+	<p><img src="assets/i/13_bad.png" alt="image" /></p>
+
+	<h3>Utilice los modos de fusión con cuidado</h3>
+
+	<p>Cuando se utilizan los modos de fusión se dificulta obtener el valor Hexadecimal del color. En general <strong>NO</strong> utilize modos de fusión (Blend Modes).</p>
+
+	<p><strong>Buena idea</strong></p>
+
+	<p><img src="assets/i/14_good.png" alt="image" /></p>
+
+	<p><strong>Mala idea</strong></p>
+
+	<p><img src="assets/i/14_bad.png" alt="image" /></p>
+
+	<h3>Utilice tipografías de icónos en lugar de imágenes</h3>
+
+	<p>Utilizar tipografía de texto para iconos es mas recomendable que utilizar imagenes, ya que es más fácil de transformar y ajustar sin perder calidad que una imágen.</p>
+
+	<p><strong>Buena idea</strong></p>
+
+	<p><img src="assets/i/40_good.png" alt="image" /></p>
+
+	<p><strong>Mala idea</strong></p>
+
+	<p><img src="assets/i/40_bad.png" alt="image" /></p>
+
+	<p><strong><a href="#tabla-de-contenidos">[⬆]</a></strong></p>
+
+	<h2 id="tipografia">Tipografía</h2>
+
+	<h3>Utilice valores en pixeles exactos</h3>
+
+	<p>Abstengase de redimensionar el texto con las herramientas de transformación. Siempre de a los textos valores en pixéles exactos, sin decimales.</p>
+
+	<p><strong>Buena idea</strong></p>
+
+	<p><img src="assets/i/16_good.png" alt="image" /></p>
+
+	<p><strong>Mala idea</strong></p>
+
+	<p><img src="assets/i/16_bad.png" alt="image" /></p>
+
+	<h3>Adjunte las fuentes licenciadas</h3>
+
+	<p>Adjunte un folder, con las fuentes utilizadas, recuerde que estas deben estar licenciadas para su uso en sitios web.</p>
+
+	<p><strong>Buena idea</strong></p>
+
+	<p><img src="assets/i/17_good.png" alt="image" /></p>
+
+	<p><strong>Mala idea</strong></p>
+
+	<p><img src="assets/i/17_bad.png" alt="image" /></p>
+
+	<h3>No estire la tipografía</h3>
+
+	<p>No es posible realizar esto por HTML/CSS</p>
+
+	<p><strong>Buena idea</strong></p>
+
+	<p><img src="assets/i/18_good.png" alt="image" /></p>
+
+	<p><strong>Mala idea</strong></p>
+
+	<p><img src="assets/i/18_bad.png" alt="image" /></p>
+
+	<h3>Controle sus cajas de texto</h3>
+
+	<p>Esta muy bien utilizar cajas de texto, únicamente no las deje de un tamaño mayor al texto que contiene, ya que impide que se pueda seleccionar elementos que estan debajo.</p>
+
+	<p><strong>Buena idea</strong></p>
+
+	<p><img src="assets/i/19_good.png" alt="image" /></p>
+
+	<p><strong>Mala idea</strong></p>
+
+	<p><img src="assets/i/19_bad.png" alt="image" /></p>
+
+	<h3>Utilice diferentes cajas de texto</h3>
+
+	<p>Cada encabezado y cada parrafo en diferentes cajas de texto permite encontrar rapidamente las características del texto.</p>
+
+	<p><strong>Buena idea</strong></p>
+
+	<p><img src="assets/i/20_good.png" alt="image" /></p>
+
+	<p><strong>Mala idea</strong></p>
+
+	<p><img src="assets/i/20_bad.png" alt="image" /></p>
+
+	<p><strong><a href="#tabla-de-contenidos">[⬆]</a></strong></p>
+
+	<h2 id="efectos">Efectos</h2>
+
+	<h3>Utilice Color Overlay apropiadamente</h3>
+
+	<p>Es más fácil encontrar el color de un elemento cuando no esta definido por sobreexposición de color (Color Overlay)</p>
+
+	<p><strong>Buena idea</strong></p>
+
+	<p><img src="assets/i/21_good.png" alt="image" /></p>
+
+	<p><strong>Mala idea</strong></p>
+
+	<p><img src="assets/i/21_bad.png" alt="image" /></p>
+
+	<h3>Cree patrones adecuadamente</h3>
+
+	<p>No es aconsejable utilizar efectos con gradientes en elementos repetitivos, ya que dificulta su generación en HTML/CSS.</p>
+
+	<p><strong>Buena idea</strong></p>
+
+	<p><img src="assets/i/22_good.png" alt="image" /></p>
+
+	<p><strong>Mala idea</strong></p>
+
+	<p><img src="assets/i/22_bad.png" alt="image" /></p>
+
+	<h3>Mantenga el uso de efectos al mínimo</h3>
+
+	<p>Con el incremento de uso de efectos, se complica la traducción de los mismos a CSS. Preferiblemente no utilice efectos o mantengalos al mínimo.</p>
+
+	<p><strong>Buena idea</strong></p>
+
+	<p><img src="assets/i/23_good.png" alt="image" /></p>
+
+	<p><strong>Mala idea</strong></p>
+
+	<p><img src="assets/i/23_bad.png" alt="image" /></p>
+
+	<h3>Maneje los bordes</h3>
+
+	<p>Evite el uso de bordes en el centro y hacia afuera, utilice bordes hacia dentro.</p>
+
+	<p><strong>Buena idea</strong></p>
+
+	<p><img src="assets/i/25_good.png" alt="image" /></p>
+
+	<p><strong>Mala idea</strong></p>
+
+	<p><img src="assets/i/25_bad.png" alt="image" /></p>
+
+	<p><strong><a href="#tabla-de-contenidos">[⬆]</a></strong></p>
+
+	<h2 id="buenas-practicas">Buenas prácticas</h2>
+
+	<h3>Utilice una grilla</h3>
+
+	<p>La grilla establece un sistema de anchos, altos y alineaciones.</p>
+
+	<p><strong>Buena idea</strong></p>
+
+	<p><img src="assets/i/26_good.png" alt="image" /></p>
+
+	<p><strong>Mala idea</strong></p>
+
+	<p><img src="assets/i/26_bad.png" alt="image" /></p>
+
+	<h3>Utilice las sombras adecuadamente</h3>
+
+	<p>las configuraciones por defecto de las sombras necesitan ser ajustadas para que logren un efécto mas realista.</p>
+
+	<p><strong>Buena idea</strong></p>
+
+	<p><img src="assets/i/27_good.png" alt="image" /></p>
+
+	<p><strong>Mala idea</strong></p>
+
+	<p><img src="assets/i/27_bad.png" alt="image" /></p>
+
+	<h3>Utilice Tipografías Web</h3>
+
+	<p>Actualmente existen una variedad de servicios que proveen tipografías gratuitas y pagas para su uso en internet, se aconseja utilizarlas.</p>
+
+	<p>Gratuitas:</p>
+
+	<ul>
+	<li><a href="http://www.google.com/webfonts">Google Web Fonts</a></li>
+	<li><a href="http://html.adobe.com/edge/webfonts/">Adobe Edge Web Fonts</a></li>
+	</ul>
+
+
+	<p>Pagas:</p>
+
+	<ul>
+	<li><a href="https://typekit.com/">Typekit</a></li>
+	<li><a href="http://www.fontspring.com/">FontSpring</a></li>
+	<li><a href="http://www.typotheque.com/webfonts">Typotheque</a></li>
+	<li><a href="http://www.webtype.com/">Webtype</a></li>
+	<li><a href="http://fontdeck.com/">Font Deck</a></li>
+	</ul>
+
+
+	<p><strong>Buena idea</strong></p>
+
+	<p><img src="assets/i/28_good.png" alt="image" /></p>
+
+	<p><strong>Mala idea</strong></p>
+
+	<p><img src="assets/i/28_bad.png" alt="image" /></p>
+
+	<p><strong><a href="#tabla-de-contenidos">[⬆]</a></strong></p>
+
+	<h2 id="checklist">Checklist</h2>
+
+	<h3>Lea los copy en busca de errores ortográficos</h3>
+
+	<p>Busque errores gramaticales</p>
+
+	<p><strong>Buena idea</strong></p>
+
+	<p><img src="assets/i/31_good.png" alt="image" /></p>
+
+	<p><strong>Mala idea</strong></p>
+
+	<p><img src="assets/i/31_bad.png" alt="image" /></p>
+
+	<h3>Compare contra los Wireframes</h3>
+
+	<p>Revise exhaustivamente que los elementos y componentes incluidos en los wireframes se encuentren en su diseño.</p>
+
+	<p><strong>Buena idea</strong></p>
+
+	<p><img src="assets/i/32_good.png" alt="image" /></p>
+
+	<p><strong>Mala idea</strong></p>
+
+	<p><img src="assets/i/32_bad.png" alt="image" /></p>
+
+	<h3>Revise las imágenes</h3>
+
+	<p>Busque imagenes que hayan podido salir con marcas de agua, especialmente si utilizó imágenes de stock.</p>
+
+	<p><strong>Buena idea</strong></p>
+
+	<p><img src="assets/i/33_good.png" alt="image" /></p>
+
+	<p><strong>Mala idea</strong></p>
+
+	<p><img src="assets/i/33_bad.png" alt="image" /></p>
+
+	<h3>Sea consistente</h3>
+
+	<p>Utilice exactamente el mismo color en elementos que comparten estilos.</p>
+
+	<p><strong>Buena idea</strong></p>
+
+	<p><img src="assets/i/35_good.png" alt="image" /></p>
+
+	<p><strong>Mala idea</strong></p>
+
+	<p><img src="assets/i/35_bad.png" alt="image" /></p>
+
+	<p><strong><a href="#tabla-de-contenidos">[⬆]</a></strong></p>
+
+	<h2 id="recursos">Recursos</h2>
+
+	<ul>
+	<li><a href="http://www.reinegger.net/50_reasons_not_to_use_photoshop_for_webdesign.html">50 reasons NOT to use Photoshop for Web Design</a></li>
+	<li><a href="http://seesparkbox.com/foundry/using_illustrator_for_web_design">Using Illustrator for Web Design</a></li>
+	<li><a href="http://photoshopetiquette.com/">Photoshop Etiquette</a></li>
+	<li><a href="http://www.gomediazine.com/insights/organize-your-design-files-or-else/#.UQqi7FpHZZ8">Organize Your Design Files – Or ELSE!</a></li>
+	<li><a href="http://viget.com/inspire/handing-off-psds-that-wont-make-your-co-workers-hate-you">Handing Off PSDs That Won’t Make Your Co-Workers Hate You</a></li>
+	<li><a href="http://css-tricks.com/video-screencasts/89-organizing-photoshop/">Organizing a Photoshop Document - Video</a></li>
+	<li><a href="http://madcatphotography.wordpress.com/2010/05/27/photoshop-quick-tip-how-to-turn-off-add-copy-to-copied-layers-and-groups/">Photoshop Tip – How to turn off “Add Copy to Copied Layers and Groups”</a></li>
+	<li><a href="http://www.webdesignerdepot.com/2009/08/how-to-effectively-organize-your-photoshop-layers/">How to Effectively Organize your Photoshop Layers</a></li>
+	<li><a href="http://www.bittbox.com/photoshop/how-to-photoshop-delete-all-hidden-layers">How to delete all Hidden Layers at the same time in Adobe Photoshop</a></li>
+	<li><a href="http://methodandcraft.com/videos/states-and-layer-comps">States and Layer Comps</a></li>
+	<li><a href="http://viget.com/inspire/smart-ways-to-use-adobe-photoshops-smart-objects">Genius Ways To Use Photoshop Smart Objects</a></li>
+	<li><a href="http://bjango.com/articles/smartobjects/">Smart Objects</a></li>
+	<li><a href="http://methodandcraft.com/videos/smart-objects-for-psd-slicing">Smart Objects for PSD Slicing</a></li>
+	<li><a href="http://www.smashingmagazine.com/2009/12/17/unveiling-photoshop-masks/">Unveiling Photoshop Masks</a></li>
+	<li><a href="http://methodandcraft.com/videos/shaping-textfields-in-photoshop">Shaping Textfields in Photoshop</a></li>
+	<li><a href="http://www.smashingmagazine.com/2011/10/03/whys-hows-textures-web-design/">The Whys And The Hows Of Textures In Web Design</a></li>
+	<li><a href="http://methodandcraft.com/videos/creating-tileable-textures">Creating Tileable Textures</a></li>
+	<li><a href="http://designinstruct.com/tools-basics/photoshop-patterns-ultimate-guide/">Photoshop Patterns: Ultimate Guide</a></li>
+	<li><a href="http://elliotjaystocks.com/blog/a-better-photoshop-grid-for-responsive-web-design/">A better Photoshop grid for responsive web design</a></li>
+	<li><a href="http://www.smashingmagazine.com/2011/11/09/establishing-your-grid-in-photoshop/">Establishing Your Grid In Photoshop</a></li>
+	<li><a href="http://guideguide.me/">Dealing with grids in Photoshop is a pain</a></li>
+	<li><a href="http://modulargrid.org/#panel">Modular Grid Pattern</a></li>
+	<li><a href="http://0to255.com/">0to255</a></li>
+	</ul>
+
+
+	<p><strong><a href="#tabla-de-contenidos">[⬆]</a></strong></p>
+
+	<h2 id="colaboradores">Colaboradores</h2>
+
+	<ul>
+	<li><a href="../../graphs/contributors">Ver colaboradores</a></li>
+	</ul>
+
+
+	<h2 id="licencia">Licencia</h2>
+
+	<p>(The MIT License)</p>
+
+	<p>Copyright (c) 2013 Sancho BBDO</p>
+
+	<p>Se autoriza por la presente, de forma gratuita, a cualquier
+	persona que haya obtenido una copia de este software y
+	archivos asociados de documentación (el "Software"), para tratar en el
+	Software sin restricción, incluyendo sin ninguna limitación en lo que concierne
+	los derechos para usar, copiar, modificar, fusionar, publicar,
+	distribuir, sublicenciar, y / o vender copias de este
+	Software, y para permitir a las personas a las que se les proporcione el Software para
+	hacer lo mismo, sujeto a las siguientes condiciones:</p>
+
+	<p>El aviso de copyright anterior y este aviso de permiso
+	tendrá que ser incluido en todas las copias o partes sustanciales de
+	este Software.</p>
+
+	<p>EL SOFTWARE SE ENTREGA "TAL CUAL", SIN GARANTÍA DE NINGÚN
+	TIPO, EXPRESA O IMPLÍCITA, INCLUYENDO PERO SIN LIMITARSE A GARANTÍAS DE
+	MERCANTIBILIDAD, CAPACIDAD DE HACER Y DE NO INFRACCIÓN DE COPYRIGHT. EN NINGÚN
+	CASO LOS AUTORES O TITULARES DEL COPYRIGHT SERÁN RESPONSABLES DE
+	NINGUNA RECLAMACIÓN, DAÑOS U OTRAS RESPONSABILIDADES,
+	YA SEA EN UN LITIGIO, AGRAVIO O DE OTRO MODO,
+	DERIVADAS DE, OCASIONADAS POR CULPA DE O EN CONEXION CON EL
+	SOFTWARE O SU USO U OTRO TIPO DE ACCIONES EN EL SOFTWARE.</p>
+	</div>
+</section>
+
+	</div>
+
+<!-- Obtiene jQuery del CDN de Google, con opción a cargarlo de un archivo local  -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+<!-- Scripts concatenados y minificados -->
+<script src='assets/js/plugins.js'></script>
+<script src='assets/js/app.js'></script>
+</body>
+</html>

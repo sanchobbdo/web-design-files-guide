@@ -1,0 +1,336 @@
+/*
+Autor: Sancho BBDO (http://www.sanchobbdo.com.co)
+*/
+
+$black: #231F20;
+$red: #EE3423;
+
+/* =1 GLOBAL
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+html,
+body {
+	height: 100%;
+}
+
+body {
+	background-color: #f7f7f7;
+	color: $black;
+	line-height: 1;
+	font: normal 16px $helvetica;
+	vertical-align: top; }
+
+.l-app {
+	height: 100%;
+	overflow: hidden;
+}
+
+.l-container {
+  margin: 0 auto;
+  width: 960px; }
+
+/* Selections ----------- */
+::-moz-selection {
+	background: #000;
+	color: white; }
+
+::selection {
+	background: #000;
+	color: white; }
+
+	::selection:window-inactive {
+		background: $black;
+		color: #eee; }
+
+/* =2 LINKS
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+a:link,
+a:visited { color: $red; }
+
+a:hover { color: $red; }
+
+a:active { color: $red; }
+
+/* =3 HEADINGS
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+h1 {
+	font-size: em(36);
+}
+
+h2 {
+	 border-bottom: 1px solid #cccccc;
+	 font-size: em(24);
+	 padding-bottom: 2px;
+}
+
+h3 {
+	font-size: em(21);
+}
+
+h4 {
+	font-size: em(18);
+}
+
+h5 {
+	font-size: em(16);
+}
+
+h6 {
+	font-size: em(11);
+}
+
+/* =4 HEADER
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+.header {
+	float: left;
+	height: 100%;
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	width: 80%;
+	z-index: 5;
+	@include box-sizing(border-box);
+
+	h2 {
+		border: none;
+		color: white;
+		text-align: center;
+	}
+
+}
+
+.nav {
+	background: $black;
+	height: 100%;
+	overflow-y: scroll;
+	text-align: left;
+	width: 100%;
+
+	-webkit-overflow-scrolling: touch;
+
+	h2 {
+		margin: 14px 0;
+	}
+
+	ol {
+		border-bottom: dotted 1px #666;
+		border-top: dotted 1px #666;
+		padding: 0;
+
+		a {
+			display: block;
+			padding: .8em;
+			text-decoration: none;
+			@include transition(all .3s ease-in-out);
+		}
+
+		a:hover {
+			background: $red;
+			color: white;
+			margin-left: 1em;
+		}
+	}
+
+	li {
+		margin: .5em 0;
+	}
+}
+
+.action-buttons {
+	text-align: center;
+}
+
+a.btn {
+	color: white;
+	@include button($red);
+}
+
+a.btn:before {
+	font-size: 2em;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+
+/* =5 CONTENT
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+.logo-container {
+	left: 0;
+	min-height: 13%;
+	padding: 20px 10px;
+	position: relative;
+	text-align: center;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+	@include background-image(linear-gradient($black 0, black 100%));
+	@include box-sizing(border-box);
+	@include transition (all .3s $ease-out-quint);
+}
+
+.menu-btn {
+	left: 10px;
+	position: absolute;
+	text-decoration: none;
+	top: 10px;
+	vertical-align: middle;
+}
+
+.menu-btn:before {
+	font-size: 2.4em;
+}
+
+.sancho-logo {
+	color: white;
+	margin-left: 25px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+section {
+	background-color: #f7f7f7;
+	height: 87%;
+	overflow-y: scroll;
+	position: relative;
+	vertical-align: top;
+	width: 100%;
+	z-index: 10;
+	@include box-sizing(border-box);
+	@include transition (all .3s $ease-out-quint);
+
+	-webkit-overflow-scrolling: touch;
+
+	.l-content {
+		max-width: 720px;
+		padding: 0 5% 5%;
+	}
+
+	.sancho-logo {
+		display: none;
+	}
+
+	img {
+		height: auto;
+		width: 90%;
+	}
+}
+
+.is-open {
+	@include transform(translate3d(80%,0,0));
+}
+
+/* Markdown HTML */
+code,
+tt {
+	background-color: #f8f8f8;
+	border-radius: 3px;
+	border: 1px solid #eaeaea;
+	margin: 0 2px;
+	padding: 0 5px;
+	white-space: nowrap;
+}
+
+pre code {
+	background: transparent;
+	border: none;
+	margin: 0;
+	padding: 0;
+	white-space: pre;
+}
+
+.highlight pre {
+	background-color: #f8f8f8;
+	border-radius: 3px;
+	border: 1px solid #cccccc;
+	font-size: 13px;
+	line-height: 19px;
+	overflow: auto;
+	padding: 6px 10px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border-radius: 3px;
+	border: 1px solid #cccccc;
+	font-size: 13px;
+	line-height: 19px;
+	overflow: auto;
+	padding: 6px 10px;
+
+	code,
+	tt {
+		background-color: transparent;
+		border: none;
+	}
+}
+
+/* =7 MEDIA QUERIES
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* Viewport ----------- */
+@-webkit-viewport {	width: device-width; }
+@-moz-viewport { width: device-width; }
+@-o-viewport { width: device-width; }
+@-ms-viewport {	width: device-width; }
+@viewport {	width: device-width; }
+
+/*All ----------- */
+@media only screen and (min-width: 30em) {
+	/*480px*/
+	.sancho-logo {
+		margin: 0;
+	}
+}
+
+@media only screen and (min-width: 37.5em) {
+	/*600px*/
+	.logo-container {
+		min-height: 5%;
+	}
+
+	section {
+		height: 95%;
+	}
+}
+
+@media only screen and (min-width: 58.5em) {
+	/* 936px */
+	.logo-container {
+		display: none;
+	}
+
+	.menu-btn {
+		display: none;
+	}
+
+	.sancho-logo {
+		color: $black;
+		font-size: 2.8em;
+		text-align: left;
+	}
+
+	.header {
+		float: left;
+		position: static;
+		width: 20%;
+		@include transform(translate3d(0,0,0));
+	}
+
+	.nav {
+		width: 100%;
+	}
+
+	section {
+		height: 100%;
+		padding: 2em 4em;
+		width: 80%;
+
+		.sancho-logo {
+			display: block;
+		}
+
+		img {
+			height: auto;
+			width: auto;
+		}
+	}
+}

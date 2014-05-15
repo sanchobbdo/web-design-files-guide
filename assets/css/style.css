@@ -1,0 +1,328 @@
+/*
+Autor: Sancho BBDO (http://www.sanchobbdo.com.co)
+*/
+/* =1 GLOBAL
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+html,
+body {
+  height: 100%; }
+
+body {
+  background-color: #f7f7f7;
+  color: #231f20;
+  line-height: 1;
+  font: normal 16px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  vertical-align: top; }
+
+.l-app {
+  height: 100%;
+  overflow: hidden; }
+
+.l-container {
+  margin: 0 auto;
+  width: 960px; }
+
+/* Selections ----------- */
+::-moz-selection {
+  background: #000;
+  color: white; }
+
+::selection {
+  background: #000;
+  color: white; }
+
+::selection:window-inactive {
+  background: #231f20;
+  color: #eee; }
+
+/* =2 LINKS
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+a:link,
+a:visited {
+  color: #ee3423; }
+
+a:hover {
+  color: #ee3423; }
+
+a:active {
+  color: #ee3423; }
+
+/* =3 HEADINGS
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+h1 {
+  font-size: 2.25em; }
+
+h2 {
+  border-bottom: 1px solid #cccccc;
+  font-size: 1.5em;
+  padding-bottom: 2px; }
+
+h3 {
+  font-size: 1.3125em; }
+
+h4 {
+  font-size: 1.125em; }
+
+h5 {
+  font-size: 1em; }
+
+h6 {
+  font-size: 0.6875em; }
+
+/* =4 HEADER
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+.header {
+  float: left;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 80%;
+  z-index: 5;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+  .header h2 {
+    border: none;
+    color: white;
+    text-align: center; }
+
+.nav {
+  background: #231f20;
+  height: 100%;
+  overflow-y: scroll;
+  text-align: left;
+  width: 100%;
+  -webkit-overflow-scrolling: touch; }
+  .nav h2 {
+    margin: 14px 0; }
+  .nav ol {
+    border-bottom: dotted 1px #666;
+    border-top: dotted 1px #666;
+    padding: 0; }
+    .nav ol a {
+      display: block;
+      padding: .8em;
+      text-decoration: none;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+    .nav ol a:hover {
+      background: #ee3423;
+      color: white;
+      margin-left: 1em; }
+  .nav li {
+    margin: .5em 0; }
+
+.action-buttons {
+  text-align: center; }
+
+a.btn {
+  color: white;
+  border: 1px solid #c41505;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 0 #ed7b70;
+  color: white;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: bold;
+  background-color: #ee3423;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ee3423), color-stop(100%, #d31706));
+  background-image: -webkit-linear-gradient(#ee3423, #d31706);
+  background-image: linear-gradient(#ee3423, #d31706);
+  padding: 7px 18px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #b50f00;
+  background-clip: padding-box; }
+  a.btn:hover:not(:disabled) {
+    box-shadow: inset 0 1px 0 0 #e85042;
+    cursor: pointer;
+    background-color: #e12817;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e12817), color-stop(100%, #c31606));
+    background-image: -webkit-linear-gradient(#e12817, #c31606);
+    background-image: linear-gradient(#e12817, #c31606); }
+  a.btn:active:not(:disabled) {
+    border: 1px solid #c41505;
+    box-shadow: inset 0 0 8px 4px #b31507, inset 0 0 8px 4px #b31507, 0 1px 1px 0 #eeeeee; }
+  a.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed; }
+
+a.btn:before {
+  font-size: 2em;
+  margin-right: 10px;
+  vertical-align: middle; }
+
+/* =5 CONTENT
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+.logo-container {
+  left: 0;
+  min-height: 13%;
+  padding: 20px 10px;
+  position: relative;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background-image: -webkit-linear-gradient( #231f20 0, black 100%);
+  background-image: linear-gradient( #231f20 0, black 100%);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  -moz-transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
+
+.menu-btn {
+  left: 10px;
+  position: absolute;
+  text-decoration: none;
+  top: 10px;
+  vertical-align: middle; }
+
+.menu-btn:before {
+  font-size: 2.4em; }
+
+.sancho-logo {
+  color: white;
+  margin-left: 25px;
+  text-align: center;
+  vertical-align: middle; }
+
+section {
+  background-color: #f7f7f7;
+  height: 87%;
+  overflow-y: scroll;
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  z-index: 10;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  -moz-transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  -webkit-overflow-scrolling: touch; }
+  section .l-content {
+    max-width: 720px;
+    padding: 0 5% 5%; }
+  section .sancho-logo {
+    display: none; }
+  section img {
+    height: auto;
+    width: 90%; }
+
+.is-open {
+  -webkit-transform: translate3d(80%, 0, 0);
+  -moz-transform: translate3d(80%, 0, 0);
+  -ms-transform: translate3d(80%, 0, 0);
+  -o-transform: translate3d(80%, 0, 0);
+  transform: translate3d(80%, 0, 0); }
+
+/* Markdown HTML */
+code,
+tt {
+  background-color: #f8f8f8;
+  border-radius: 3px;
+  border: 1px solid #eaeaea;
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap; }
+
+pre code {
+  background: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  white-space: pre; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border-radius: 3px;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px; }
+
+pre {
+  background-color: #f8f8f8;
+  border-radius: 3px;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px; }
+  pre code,
+  pre tt {
+    background-color: transparent;
+    border: none; }
+
+/* =7 MEDIA QUERIES
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* Viewport ----------- */
+@-webkit-viewport {
+  width: device-width; }
+
+@-moz-viewport {
+  width: device-width; }
+
+@-o-viewport {
+  width: device-width; }
+
+@-ms-viewport {
+  width: device-width; }
+
+@viewport {
+  width: device-width; }
+
+/*All ----------- */
+@media only screen and (min-width: 30em) {
+  /*480px*/
+  .sancho-logo {
+    margin: 0; } }
+@media only screen and (min-width: 37.5em) {
+  /*600px*/
+  .logo-container {
+    min-height: 5%; }
+
+  section {
+    height: 95%; } }
+@media only screen and (min-width: 58.5em) {
+  /* 936px */
+  .logo-container {
+    display: none; }
+
+  .menu-btn {
+    display: none; }
+
+  .sancho-logo {
+    color: #231f20;
+    font-size: 2.8em;
+    text-align: left; }
+
+  .header {
+    float: left;
+    position: static;
+    width: 20%;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+
+  .nav {
+    width: 100%; }
+
+  section {
+    height: 100%;
+    padding: 2em 4em;
+    width: 80%; }
+    section .sancho-logo {
+      display: block; }
+    section img {
+      height: auto;
+      width: auto; } }
